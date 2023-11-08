@@ -1,7 +1,13 @@
 package tn.esprit.faresloukil.foyer_fares_loukil.DAO.Entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "Chambre")
 public class Chambre {
