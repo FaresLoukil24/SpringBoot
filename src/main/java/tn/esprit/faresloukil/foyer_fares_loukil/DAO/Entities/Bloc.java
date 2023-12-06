@@ -25,6 +25,8 @@ public class Bloc {
     private long cin;
     @Column(name="ecole")
     private String ecole;
+    @Column(name="capcite")
+    private int capacite;
     @Column(name="dateNaissance")
     private Date dateNaissance;
 
