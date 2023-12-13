@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,4 +31,6 @@ public class Etudiant {
     private Date dateNaissance;
 
 
+    @ManyToMany(mappedBy="etudiants", cascade = CascadeType.ALL)
+    private Set<Reservation> reservations;
 }

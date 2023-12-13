@@ -1,7 +1,10 @@
 package tn.esprit.faresloukil.foyer_fares_loukil.DAO.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -17,7 +20,13 @@ public class Chambre {
     private long id;
 
     @Column(name="numeroChambre")
-    private long nomUniversite;
+    private long numeroChambre;
     @Enumerated(EnumType.STRING)
     private TypeChambre ch;
+    @OneToMany(cascade = CascadeType.ALL)
+    Set<Reservation> reservations;
+
+    @JsonIgnoreProperties("bloc")
+    @ManyToOne
+    Bloc bloc;
 }

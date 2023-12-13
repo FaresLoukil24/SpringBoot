@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,5 +22,6 @@ public class Reservation {
 
     @Column(name="estValide")
     private Boolean estValide;
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    Set<Etudiant> etudiants;
 }

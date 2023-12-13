@@ -38,7 +38,7 @@ public class BlockServiceImpl implements IBlockService {
         Bloc blocToModify = blockRepository.findById(id).orElse(null);
 
         if (blocToModify != null) {
-            blocToModify.setNom(e.getNom());
+            blocToModify.setNomBloc(e.getNomBloc());
             blocToModify.setCapacite(e.getCapacite());
 
             return blockRepository.save(blocToModify);
